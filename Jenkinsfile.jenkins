@@ -27,6 +27,14 @@ pipeline{
             steps{
                 echo "Perform security scan on the code using $SECURITY_SCAN_TOOL to identify any vulnerabilities"
             }
+
+            post{
+                success{
+                    mail to: "zhenkangko@gmail.com",
+                    subject: "Integration Test Completed",
+                    body: "Status: Success"
+                }
+            }
         }
         stage('Deploy to Staging'){
             steps{
@@ -40,10 +48,10 @@ pipeline{
 
             post{
                 success{
+                    emailext attachlog: true
                     mail to: "zhenkangko@gmail.com",
-                    subject: "Integration Test Email",
-                    body: "Success"
-
+                    subject: "Integration Test Completed",
+                    body: "Status: Success"
                 }
             }
             
