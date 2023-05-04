@@ -37,6 +37,16 @@ pipeline{
             steps{
                 echo "Run integration tests on $SERVER to ensure the application functions as expected"
             }
+
+            post{
+                success{
+                    mail to: "zhenkangko@gmail.com",
+                    subject: "Integration Test Email",
+                    body: "Success"
+
+                }
+            }
+            
         }
         stage('Deploy to Production'){
             steps{
