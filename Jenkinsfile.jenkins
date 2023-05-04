@@ -32,7 +32,7 @@ pipeline{
                 success{
                     mail to: "zhenkangko@gmail.com",
                     subject: "Integration Test Completed",
-                    body: "Status: Success"
+                    body: "Status: Success \nAttachment: Logs",
                 }
             }
         }
@@ -50,8 +50,8 @@ pipeline{
                 success{
                     mail to: "zhenkangko@gmail.com",
                     subject: "Integration Test Completed",
-                    body: "Status: Success",
-                    attachLog: true
+                    body: "Status: Success \nAttachment: Logs",
+
                 }
             }
             
