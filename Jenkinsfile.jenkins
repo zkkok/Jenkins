@@ -31,7 +31,7 @@ pipeline{
             post{
                 success{
                     mail to: "zhenkangko@gmail.com",
-                    subject: "Integration Test Completed",
+                    subject: "Security Scan Completed",
                     body: "Status: Success \nAttachment: Logs"
                 }
             }
