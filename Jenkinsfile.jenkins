@@ -30,9 +30,10 @@ pipeline{
 
             post{
                 success{
-                    mail to: "zhenkangko@gmail.com",
-                    subject: "Security Scan Completed",
-                    body: "Status: Success \nAttachment: Logs"
+                    emailext attachLog: true,
+                    to: "zhenkangko@gmail.com",
+                    subject: "Integration Test Completed",
+                    body: "Status: Success "
                 }
             }
         }
